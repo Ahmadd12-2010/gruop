@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOYDELIGHT & DIMSUM KING - Sehat & Lezat!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap');
+        
+        :root {
+            --hijau: #2ecc71;
+            --oranye: #e67e22;
+            --krem: #fff8e1;
+            --coklat: #5d4037;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--krem);
+            color: #333;
+        }
+        
+        /* Header */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+        
+        /* Produk Section */
+        .produk-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .produk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .produk-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .produk-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .produk-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .produk-info {
+            padding: 1.5rem;
+        }
+        
+        .produk-info h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--coklat);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        
+        .harga {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--oranye);
+            margin: 1rem 0;
+        }
+        
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--oranye), #d35400);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .promo-banner h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        
+        /* Tombol */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-hijau {
+            background: var(--hijau);
+            color: white;
+        }
+        
+        .btn-hijau:hover {
+            background: #27ae60;
+            transform: scale(1.05);
+        }
+        
+        /* Keunggulan */
+        .keunggulan {
+            background: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .keunggulan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .keunggulan-item {
+            padding: 1.5rem;
+        }
+        
+        .keunggulan-item i {
+            font-size: 3rem;
+            color: var(--hijau);
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--coklat);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .social-icons {
+            margin: 1.5rem 0;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--oranye);
+            transform: scale(1.2);
+        }
+        
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animasi-muncul {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.30s forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.18s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .promo-banner h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="animasi-muncul">SUSU KEDELAI & DIMSUM HOMEMADE</h1>
+        <p class="animasi-muncul delay-1">Kombinasi sempurna minuman sehat dan makanan lezat!</p>
+        <a href="#produk" class="btn btn-hijau animasi-muncul delay-2">LIHAT PRODUK</a>
+    </section>
+    
+    <!-- Produk Section -->
+    <section id="produk" class="produk-section">
+        <h2 style="text-align: center; color: var(--coklat); font-size: 2.5rem;">PRODUK</h2>
+        <p style="text-align: center; max-width: 800px; margin: 1rem auto;">Rasakan kenikmatan alami dengan produk berkualitas premium kami</p>
+        
+        <div class="produk-grid">
+            <!-- Susu Kedelai -->
+            <div class="produk-card animasi-muncul">
+                <div class="produk-img" style="background-image: url('https://img-global.cpcdn.com/recipes/e5d227f91fce0d0b/1200x630cq70/photo.jpg')"></div>
+                <div class="produk-info">
+                    <h3>SOYDELIGHT</h3>
+                    <p>Susu kedelai organik dengan rasa original. Kaya protein dan tanpa bahan pengawet.</p>
+                    <div class="harga">Rp 5.000/botol</div>
+                    <a href="#pesan" class="btn btn-hijau">PESAN SEKARANG</a>
+                </div>
+            </div>
+            
+            <!-- Dimsum -->
+            <div class="produk-card animasi-muncul delay-1">
+                <div class="produk-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp4Rum_CrUJyCMRI9M7z-MtO38XaMIpyFGFrX5Cgm1yLAC08uu-ErejrA&s');"></div>
+                <div class="produk-info">
+                    <h3>DIMSUM HOMEMADE</h3>
+                    <p>Dimsum premium dengan berbagai pilihan: original, sosi, keju, jamur dan 2 saus : saos Bangkok, dan Saos mentai (tidak di torch). Dibuat dengan bahan pilihan.</p>
+                    <div class="harga">Rp 3.000/porsi (1 pcs)</div>
+                    <a href="#pesan" class="btn btn-hijau">PESAN SEKARANG</a>
+                </div>
+            </div>
+            
+            <!-- Paket Combo -->
+            <div class="produk-card animasi-muncul delay-2">
+                <div class="produk-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6f/GAMBAR_TIDAK_TERSEDIA.png');"></div>
+                <div class="produk-info">
+                    <h3>PAKET COMBO</h3>
+                    <p>Produk Belum tersedia</p>
+                    <div class="harga"></div>
+                    <a href="#pesan" class="btn btn-hijau">PESAN SEKARANG</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <h2>PROMO SPESIAL BULAN INI!</h2>
+        <p style="font-size: 1.5rem; margin: 1rem 0;">Belum Ada Promo Bulan Ini</p>
+        <p style="font-size: 1.2rem;">Berlaku hingga 20 Mei 2025</p>
+    </section>
+    
+    <!-- Keunggulan -->
+    <section class="keunggulan">
+        <h2 style="color: var(--coklat); font-size: 2.5rem; margin-bottom: 3rem;">KENAPA PILIH KAMI?</h2>
+        
+        <div class="keunggulan-grid">
+            <div class="keunggulan-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Bahan Organik</h3>
+                <p>Dibuat dari bahan-bahan alami berkualitas tinggi tanpa bahan kimia</p>
+            </div>
+            
+            <div class="keunggulan-item">
+                <i class="fas fa-heart"></i>
+                <h3>Sehat & Bergizi</h3>
+                <p>Kaya protein, serat, dan nutrisi penting untuk tubuh Anda</p>
+            </div>
+            
+            <div class="keunggulan-item">
+                <i class="fas fa-clock"></i>
+                <h3>Proses Cepat</h3>
+                <p>Pesanan siap dalam jika ada pemesanan</p>
+            </div>
+            
+            <div class="keunggulan-item">
+                <i class="fas fa-truck"></i>
+                <h3>Gratis Ongkir</h3>
+                <p>Gratis pengiriman untuk pemesanan di atas Rp 1.000.00</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="pesan">
+        <h3>HUBUNGI KAMI</h3>
+        <p>
+    WhatsApp Penjual Susu Kedelai:
+    <a href="https://wa.me/6281234567890" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">
+        +62 881-1310-627 
+    </a>
+</p>
+           <p>
+    WhatsApp Penjual Dimsum Homemade: 
+    <a href="https://wa.me/6281234567890" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">
+        +62 888-2073-055
+    </a>
+</p>
+        <p>Pemesanan Siap Kapan Saja</p>
+        
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <p>© 2025 SUSU KEDELAI & DIMSUM HOMEMADE. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        // Animasi saat scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animasiElements = document.querySelectorAll('.animasi-muncul');
+            
+            // Fungsi untuk mengecek apakah elemen terlihat di layar
+            function cekTampil() {
+                animasiElements.forEach(el => {
+                    const elTop = el.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elTop < windowHeight - 100) {
+                        el.style.animationPlayState = 'running';
+                    }
+                });
+            }
+            
+            // Jalankan saat load dan scroll
+            window.addEventListener('load', cekTampil);
+            window.addEventListener('scroll', cekTampil);
+            
+            // Aktifkan semua animasi setelah delay
+            setTimeout(() => {
+                animasiElements.forEach(el => {
+                    el.style.visibility = 'visible';
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
